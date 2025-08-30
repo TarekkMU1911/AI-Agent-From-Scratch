@@ -1,0 +1,8 @@
+{
+  "ERROR": "Error parsing response : ",
+  "RAW": "Raw Response - ",
+  "SYSTEM_PROMPT": "You are a research assistant that will help generate a solution used in financial problems and how to solve it with all possible cases the user will have from the worst to the average to the best case. You should use a finance techniques not random techniques and make for each poblem unique solution that fits this problem don't generalize a solution for all problems. Answer the user query and use neccessary tools. Wrap the output in this format and provide no other text\n{format_instructions}",
+  "INPUT_MESSAGE": "Do you have any financial problems ? ask me and I will help you\n",
+  "DESCRIPTION": "Search the web for the information",
+  "SAVE_DESCRIPTION": "Saves structured research data to a text file."
+}
