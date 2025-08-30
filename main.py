@@ -9,6 +9,7 @@ from langchain_core.output_parsers import PydanticOutputParser
 from ResearchResponse import ResearchResponse  
 from langchain.agents import create_tool_calling_agent,AgentExecutor
 from tools import searchTool,wikiTool,saveTool
+from history import saveHistory, loadHistory
 import json
 
 
@@ -54,8 +55,10 @@ rawResponse = agentExecutor.invoke({"query": QUERY })
 try :
     structuredResponse = parser.parse(rawResponse["output"])
     print(structuredResponse)
+    saveHistory(QUERY, structuredResponse)
     
 except Exception as exception :
     ERROR = messages.get("ERROR")
     RAW = messages.get("RAW")
+    saveHistory(QUERY, rawResponse)
     print(ERROR,exception, RAW, rawResponse )
